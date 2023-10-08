@@ -66,7 +66,7 @@ function calcularResultado() {
         }
     }
 
-    outputDoUsuario.textContent = resultado.toString()
+    outputDoUsuario.textContent = '= ' + resultado.toString()
 }
 
 function apagarValor() {

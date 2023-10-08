@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: poppins, arial, sans-serif;
+}
+
+html {
+    font-size: clamp(14px, 1.5vw, 16px);
+}
+
+main {
+    background-color: #DAF0FF;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.calculadora {
+    background-color: #F7F8FB;
+    width: min(90%, 375px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: min(2vw, 10px);
+    padding: min(5vw, 30px);
+    gap: min(30px, 5vw);
+}
+
+.result {
+    display: grid;
+    grid-template-rows: 120px 72px;
+    width: 100%;
+}
+
+.input-do-usuario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.input-do-usuario h2 {
+    text-align: right;
+    font-weight: 400;
+    color: #818181;
+    display: inline;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.output-do-usuario  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.user-output h1 {
+    color: #424242;
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: min(15px, 2.5vw);
+    user-select: none;
+}
+
+.utils {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: min(30px, 5vw);
+}
+
+.utils span {
+    flex: 1;
+    text-align: center;
+    color: #7CC9FF;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding-block: 5px;
+    cursor: pointer;
+}
+
+.main-inputs {
+    display: flex;    
+    gap: min(30px, 5vw);
+    font-size: 2rem;
+    font-weight: 500    ;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: min(30px, 5vw);
+}
+
+.row span {
+    text-align: center;
+    background-color: white;
+    color: #38B9FF;
+    flex: 1;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+
+
+.left-middle {
+    display: flex;
+    flex-direction: column;
+    gap: min(15px, 2.5vw);
+    flex: 4;
+}
+
+.far-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: min(18px, 2.5vw);
+}
+
+.far-right span {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background-color: #ADE2FF;
+    color: #109DFF;
+    cursor: pointer;
+}
+
+.far-right span:nth-of-type(1) {
+    height: 62px;
+}
+
+.far-right p .asterisk {
+    background-color: blue;
+    vertical-align: bottom;
+}
+
+.far-right span:nth-of-type(2) {
+    height: 62px;
+}
+
+.far-right span:nth-of-type(3) {
+    height: 96px;
+}
+
+.far-right span:nth-of-type(4) {
+    height: 96px;
+}
+
+.last-row {
+    width: 100%;
+    display: flex;
+    gap: min(30px, 5vw);
+}
+
+.last-row span {
+    cursor: pointer;
+}
+
+.last-row span:nth-of-type(1) {
+    flex: 5;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #109DFF;
+    background-color: white;
+    border-radius: 16px;
+    height: 62px;
+}
+
+.last-row span:nth-of-type(2) {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #109DFF;
+    background-color: white;
+    border-radius: 16px;
+}

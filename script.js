@@ -42,8 +42,8 @@ function realizarAcaoEspecial(acao) {
 // ------ Operações ------
 function calcularResultado() {
     const ultimoValor = valorMaisRecente()
-
-    if (listaDeNumeros.includes(ultimoValor) === false) {
+    const ultimoCaractere = ultimoValor[ultimoValor.length - 1]
+    if (listaDeNumeros.includes(ultimoCaractere) === false) {
         return;
     }
 
@@ -66,6 +66,7 @@ function calcularResultado() {
         }
     }
 
+    console.log(resultado)
     outputDoUsuario.textContent = '= ' + resultado.toString()
 }
 

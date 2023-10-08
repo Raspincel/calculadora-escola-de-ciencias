@@ -2,6 +2,7 @@
 
 const listaDeNumeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
 const listaDeAcoesEspeciais = ['apagar', '=','Ac']
+const simbolos = ['+', '-', '﹡', '/']
 const inputDoUsuario = document.querySelector('.input-do-usuario h2')
 const outputDoUsuario = document.querySelector('.output-do-usuario h1')
 // ------ Símbolos especiais ------
@@ -15,11 +16,12 @@ function adicionarValor(valor) {
     const naoEhOPrimeiroValorInserido = valoresInseridos.length !== 0
     const valorNaoEhUmNUmero = isNaN(valor)
     const ehUmaAcaoEspecial = listaDeAcoesEspeciais.includes(valor)
-
+    const maisRecenteNaoEhSimbolo = simbolos.includes(valorMaisRecente()) === false
+    
     if (valorNaoEhUmNUmero) {
         if (ehUmaAcaoEspecial) {
             realizarAcaoEspecial(valor)
-        } else if (naoEhOPrimeiroValorInserido) {
+        } else if (naoEhOPrimeiroValorInserido && maisRecenteNaoEhSimbolo) {
             valoresInseridos.push(valor)
         } 
     } else {
@@ -66,7 +68,6 @@ function calcularResultado() {
         }
     }
 
-    console.log(resultado)
     outputDoUsuario.textContent = '= ' + resultado.toString()
 }
 
@@ -78,6 +79,7 @@ function apagarValor() {
 
     if (listaDeNumeros.includes(ultimoCaractere) === false) {
         valoresInseridos.pop();
+        console.log(valoresInseridos)
         return
     }
 
@@ -139,7 +141,7 @@ function atualizarInput() {
 
 // ------- Extra -------
 const calcular = document.querySelector('.calcular')
-const apagar = document.querySelector('.apagar')
+const apagar = document.querySelectorAll('.apagar')
 const teclas = document.querySelectorAll('.teclas span')
 
 for (let i = 0; i < teclas.length; i++) {
@@ -153,7 +155,8 @@ for (let i = 0; i < teclas.length; i++) {
 
 let valoresInseridos = []
 
-calcular?.addEventListener('click', calcularResultado)
-apagar?.addEventListener('click', ()=> { adicionarValor('apagar') })
+calcular.addEventListener('click', calcularResultado)
+apagar[0].addEventListener('click', ()=> { adicionarValor('apagar') })
+apagar[1].addEventListener('click', ()=> { adicionarValor('apagar') })
 
 export default {}

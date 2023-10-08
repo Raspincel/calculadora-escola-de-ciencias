@@ -27,6 +27,10 @@ h1 {
     color: #424242;
 }
 
+.apagar {
+    background: url('https://svgshare.com/i/yJP.svg') no-repeat center center;
+}
+
 .calculadora {
     background-color: #F7F8FB;
     width: min(90%, 375px);
